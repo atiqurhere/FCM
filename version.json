@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "buildNumber": 1,
+  "downloadUrl": "https://github.com/AtiqurHere/OCollect/releases/latest/download/app-release.apk",
+  "releaseNotes": "🎉 What's New:\n- Added photo upload for products and stores\n- Improved notification system\n- Bug fixes and performance improvements",
+  "forceUpdate": true,
+  "updatedAt": "January 8, 2026 at 3:20:57 AM UTC",
+
+  "developer": {
+    "name": "AtiqurHere",
+    "role": "Developer",
+    "tagline": "Building fast, clean apps.",
+    "email": "atiqur.dev404@gmail.com",
+    "website": "https://github.com/atiqurhere",
+    "github": "https://github.com/atiqurhere",
+    "telegram": "https://t.me/ar_sumon"
+  }
+}

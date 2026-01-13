@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>OrderCollector Pro — Download</title>
+  <meta name="description" content="Download the latest release of OrderCollector Pro — Android APK." />
+
+  <style>
+    :root{
+      --bg0:#060a12;
+      --bg1:#0b1220;
+      --card: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.10);
+      --text:#eaf0ff;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.55);
+      --accent:#6ea8ff;
+      --accent2:#8b5cf6;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --error:#ef4444;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(110,168,255,.22), transparent 55%),
+        radial-gradient(1000px 700px at 80% 20%, rgba(139,92,246,.20), transparent 55%),
+        radial-gradient(1000px 700px at 50% 100%, rgba(34,197,94,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    /* ✅ Fix Gap 2: reduce bottom padding */
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 22px;position:relative;}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0 18px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+
+    .logoWrap{position:relative;width:44px;height:44px}
+    .logoImg{
+      width:44px;height:44px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 12px 30px rgba(110,168,255,.18);
+      object-fit:cover;
+      background: rgba(255,255,255,.06);
+    }
+    .logoFallback{
+      display:none;width:44px;height:44px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      place-items:center;
+      box-shadow: 0 12px 30px rgba(110,168,255,.18);
+      color:#081225;font-weight:900;
+    }
+
+    .brand h1{margin:0;font-size:16px;letter-spacing:.2px;line-height:1.1;}
+    .brand p{margin:2px 0 0;font-size:12px;color:var(--muted2);}
+
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;white-space:nowrap;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 0 4px rgba(245,158,11,.15);}
+    .dot.ok{background:var(--ok);box-shadow:0 0 0 4px rgba(34,197,94,.15);}
+    .dot.err{background:var(--error);box-shadow:0 0 0 4px rgba(239,68,68,.18);}
+
+    .hero{display:grid;grid-template-columns: 1.35fr .65fr;gap:18px;align-items:stretch;margin-top:10px;}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .heroMain{padding:26px 22px;position:relative;overflow:hidden;}
+    .heroMain:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(650px 260px at 12% 0%, rgba(110,168,255,.22), transparent 60%),
+        radial-gradient(650px 260px at 88% 0%, rgba(139,92,246,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .heroMain > *{position:relative}
+
+    .kicker{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;}
+    .tag{
+      font-size:12px;padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--muted);
+    }
+
+    h2{margin:10px 0 8px;font-size:36px;letter-spacing:-.7px;line-height:1.06;}
+    .lead{margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.65;max-width:66ch;}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px;}
+    .btn{
+      appearance:none;border:none;cursor:pointer;border-radius:14px;
+      padding:12px 14px;font-weight:750;letter-spacing:.2px;font-size:14px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      text-decoration:none;
+      transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;min-height:44px;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#081225;
+      box-shadow: 0 16px 40px rgba(110,168,255,.16);
+    }
+    .btnPrimary:hover{filter:brightness(1.06)}
+    .btnGhost{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .btnGhost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.20)}
+    .btnSmall{padding:10px 12px;border-radius:12px;font-size:13px;min-height:40px;}
+    .icon{width:18px;height:18px;display:inline-block;}
+
+    .statusLine{
+      display:flex;align-items:center;gap:10px;color:var(--muted);
+      font-size:12px;margin-top:10px;flex-wrap:wrap
+    }
+    code.inline{
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10);
+      padding:2px 7px;border-radius:999px;
+      color:var(--text);font-size:12px;
+      font-family:var(--mono);
+    }
+    .flag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 10px;border-radius:999px;font-size:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+    }
+    .flag.req{border-color: rgba(239,68,68,.35);background: rgba(239,68,68,.12);}
+
+    .heroSide{padding:18px 18px;display:flex;flex-direction:column;gap:12px;}
+    .stat{
+      display:flex;justify-content:space-between;gap:10px;
+      padding:12px 12px;border-radius:16px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .stat .k{color:var(--muted2);font-size:12px;}
+    .stat .v{font-weight:800;font-size:13px;}
+
+    .box{
+      padding:14px 14px;border-radius:18px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .box h3{margin:0 0 8px;font-size:13px;letter-spacing:.2px;color:var(--muted);font-weight:800;}
+    .box pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font-family:var(--font);color:var(--text);font-size:13px;line-height:1.55;}
+
+    /* ✅ Gap 1: How to install block (designed) */
+    .installCard{
+      margin-top:14px;
+      padding:14px 14px;
+      border-radius:18px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .installHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .installTitle{
+      margin:0;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .installBadge{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      padding:6px 10px;
+      border-radius:999px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .stepsGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+    }
+    .step{
+      border-radius:16px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .num{
+      width:28px;height:28px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(110,168,255,.35), rgba(139,92,246,.30));
+      border: 1px solid rgba(255,255,255,.14);
+      display:grid;place-items:center;
+      font-weight:900;
+      color: var(--text);
+      flex: 0 0 auto;
+    }
+    .step .t{margin:0;font-weight:900;font-size:13px;}
+    .step .d{margin:3px 0 0;color:var(--muted);font-size:12px;line-height:1.55;}
+
+    .installHint{
+      margin-top:2px;
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px dashed rgba(255,255,255,.16);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.55;
+    }
+
+    .devRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .devName{font-weight:900}
+    .devTag{color:var(--muted);font-size:12px}
+    .devLinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      font-size:12px;text-decoration:none
+    }
+    .chip:hover{background:rgba(255,255,255,.09)}
+
+    .toast{
+      position:fixed;left:50%;bottom:14px;transform:translateX(-50%);
+      background:rgba(10,15,26,.86);
+      border:1px solid rgba(255,255,255,.14);
+      color:var(--text);
+      padding:10px 12px;border-radius:14px;
+      box-shadow:0 18px 50px rgba(0,0,0,.45);
+      backdrop-filter: blur(10px);
+      font-size:13px;opacity:0;pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(-2px);}
+
+    .footer{
+      margin-top:14px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      color:var(--muted2);font-size:12px;padding:8px 4px 0;
+    }
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      h2{font-size:32px}
+      .stepsGrid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./" aria-label="OrderCollector Pro home">
+        <div class="logoWrap" aria-hidden="true">
+          <img id="logoImg" src="./app_icon.png" alt="OrderCollector Pro logo" class="logoImg"
+               onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='grid';" />
+          <div id="logoFallback" class="logoFallback">OC</div>
+        </div>
+        <div>
+          <h1>OrderCollector Pro 📦</h1>
+          <p>Latest release download • Android APK</p>
+        </div>
+      </a>
+
+      <div class="pill">
+        <span class="dot" id="fetchDot"></span>
+        <span id="fetchText">Loading latest release…</span>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="card heroMain">
+        <div class="kicker">
+          <span class="tag">Clean and Simple</span>
+          <span class="tag">Admin + Collector Roles</span>
+          <span class="tag">Material 3 UI</span>
+        </div>
+
+        <h2>Get the latest OrderCollector Pro.</h2>
+        <p class="lead">
+          Download the newest APK and install it on your Android device. This page reads everything from
+          <code class="inline">version.json</code>.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" id="downloadBtn" href="#" rel="noopener" target="_blank" aria-disabled="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3v10m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Download APK
+          </a>
+
+          <a class="btn btnGhost" id="openLinkBtn" href="#" rel="noopener" target="_blank" aria-disabled="true">
+            Open download link
+          </a>
+
+          <button class="btn btnGhost btnSmall" id="copyLinkBtn" type="button" disabled>
+            Copy download link
+          </button>
+        </div>
+
+        <div class="statusLine">
+          <span>Version:</span> <code class="inline" id="ver">—</code>
+          <span>Build:</span> <code class="inline" id="build">—</code>
+          <span id="forceFlag" class="flag req" style="display:none;">Force update required</span>
+          <span>Updated:</span> <code class="inline" id="updatedAt">—</code>
+        </div>
+
+        <!-- ✅ Gap 1 fixed: fill empty area with install guide -->
+        <div class="installCard" aria-label="How to install">
+          <div class="installHeader">
+            <p class="installTitle">How to install (Android)</p>
+            <span class="installBadge">⚡ ~60 seconds setup</span>
+          </div>
+
+          <div class="stepsGrid">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <p class="t">Download the APK</p>
+                <p class="d">Tap <b>Download APK</b> and wait for the file to finish.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <p class="t">Open & install</p>
+                <p class="d">Open the file and tap <b>Install</b>.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <p class="t">Allow unknown apps</p>
+                <p class="d">If blocked, enable <b>Install unknown apps</b> for your browser/file manager.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="num">4</div>
+              <div>
+                <p class="t">Launch the app</p>
+                <p class="d">Open OrderCollector Pro and sign in.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="installHint">
+            Tip: If your phone shows “Harmful app blocked”, tap <b>More details</b> → <b>Install anyway</b> (only if you trust the source).
+          </div>
+        </div>
+      </section>
+
+      <aside class="card heroSide">
+        <div class="stat"><div class="k">App</div><div class="v">OrderCollector Pro</div></div>
+        <div class="stat"><div class="k">Platform</div><div class="v">Android (APK)</div></div>
+        <div class="stat"><div class="k">Channel</div><div class="v">Latest</div></div>
+
+        <div class="box">
+          <h3>Release Notes</h3>
+          <pre id="notes">Loading…</pre>
+        </div>
+
+        <div class="box">
+          <h3>Developer</h3>
+          <div class="devRow">
+            <div>
+              <div class="devName" id="devName">—</div>
+              <div class="devTag" id="devTag">—</div>
+            </div>
+          </div>
+          <div class="devLinks" id="devLinks" aria-label="Developer links"></div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="footer">
+      <div>© <span id="year"></span> OrderCollector Pro</div>
+      <div>Release data: <span id="meta">—</span></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const els = {
+      ver: document.getElementById("ver"),
+      build: document.getElementById("build"),
+      notes: document.getElementById("notes"),
+      downloadBtn: document.getElementById("downloadBtn"),
+      openLinkBtn: document.getElementById("openLinkBtn"),
+      copyLinkBtn: document.getElementById("copyLinkBtn"),
+      fetchText: document.getElementById("fetchText"),
+      fetchDot: document.getElementById("fetchDot"),
+      year: document.getElementById("year"),
+      meta: document.getElementById("meta"),
+      forceFlag: document.getElementById("forceFlag"),
+      updatedAt: document.getElementById("updatedAt"),
+      toast: document.getElementById("toast"),
+
+      devName: document.getElementById("devName"),
+      devTag: document.getElementById("devTag"),
+      devLinks: document.getElementById("devLinks"),
+    };
+
+    els.year.textContent = new Date().getFullYear();
+
+    function toast(msg){
+      els.toast.textContent = msg;
+      els.toast.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>els.toast.classList.remove("show"), 1500);
+    }
+
+    function setStatus(state, text){
+      els.fetchText.textContent = text;
+      els.fetchDot.classList.remove("ok","err");
+      if (state === "ok") els.fetchDot.classList.add("ok");
+      else if (state === "err") els.fetchDot.classList.add("err");
+    }
+
+    function safeText(v){ return (v === null || v === undefined) ? "—" : String(v); }
+
+    function addCacheBuster(url){
+      const u = new URL(url, window.location.href);
+      u.searchParams.set("v", Date.now());
+      return u.toString();
+    }
+
+    async function fetchJson(){
+      const url = addCacheBuster(new URL("./version.json", window.location.href).toString());
+      const res = await fetch(url, { cache: "no-store" });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    }
+
+    function addDevLink(label, href){
+      if (!href) return;
+      const a = document.createElement("a");
+      a.className = "chip";
+      a.href = href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = label;
+      els.devLinks.appendChild(a);
+    }
+
+    async function loadVersion(){
+      try{
+        setStatus("warn", "Loading latest release…");
+        const data = await fetchJson();
+
+        const version = safeText(data.version);
+        const buildNumber = safeText(data.buildNumber);
+        const downloadUrl = safeText(data.downloadUrl);
+        const releaseNotes = safeText(data.releaseNotes);
+        const forceUpdate = !!data.forceUpdate;
+        const updatedAt = safeText(data.updatedAt);
+
+        els.ver.textContent = version;
+        els.build.textContent = buildNumber;
+        els.updatedAt.textContent = updatedAt !== "—" ? updatedAt : new Date().toUTCString();
+        els.notes.textContent = releaseNotes;
+
+        els.forceFlag.style.display = forceUpdate ? "inline-flex" : "none";
+
+        if (downloadUrl && downloadUrl !== "—") {
+          els.downloadBtn.href = downloadUrl;
+          els.openLinkBtn.href = downloadUrl;
+          els.downloadBtn.setAttribute("aria-disabled","false");
+          els.openLinkBtn.setAttribute("aria-disabled","false");
+
+          els.copyLinkBtn.disabled = false;
+          els.copyLinkBtn.onclick = async () => {
+            try{
+              await navigator.clipboard.writeText(downloadUrl);
+              toast("Copied ✓");
+            }catch{
+              prompt("Copy this link:", downloadUrl);
+            }
+          };
+        }
+
+        els.meta.textContent = `v${version} (build ${buildNumber})`;
+
+        const dev = data.developer || {};
+        els.devName.textContent = safeText(dev.name);
+        els.devTag.textContent = [dev.role, dev.tagline].filter(Boolean).join(" • ") || "—";
+
+        els.devLinks.innerHTML = "";
+        addDevLink("GitHub", dev.github);
+        addDevLink("Website", dev.website);
+        addDevLink("Telegram", dev.telegram);
+        addDevLink("Email", dev.email ? `mailto:${dev.email}` : "");
+
+        setStatus("ok", "Latest release loaded");
+      }catch(err){
+        els.notes.textContent = "Could not load release info. Please refresh the page.";
+        setStatus("err", "Failed to load release info");
+        els.meta.textContent = "Not available";
+        console.error(err);
+      }
+    }
+
+    loadVersion();
+  </script>
+</body>
+</html>
